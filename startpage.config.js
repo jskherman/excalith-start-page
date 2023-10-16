@@ -1,5 +1,5 @@
 const defaultConfig = {
-	username: "Excalith",
+	username: "jskherman",
 	theme: {
 		backgroundColor: "#121317",
 		windowColor: "#1e212b",
@@ -42,7 +42,7 @@ const defaultConfig = {
 	},
 	fetch: {
 		timeFormat: "HH:mm",
-		dateFormat: "DD/MM/YYYY",
+		dateFormat: "YYYY-MM-DD",
 		titleColor: "yellow",
 		image: "icon.svg",
 		data: [
@@ -72,14 +72,19 @@ const defaultConfig = {
 				url: "https://google.com/search?q={}"
 			},
 			{
+				alias: "b",
+				name: "Bing Search",
+				url: "https://www.bing.com/search?q={}"
+			},
+			{
 				alias: "d",
 				name: "DuckDuckGo Search",
 				url: "https://duckduckgo.com/?q={}"
 			},
 			{
-				alias: "b",
-				name: "Brave Search",
-				url: "https://search.brave.com/search?q={}"
+				alias: "sp",
+				name: "Startpage Search",
+				url: "https://www.startpage.com/sp/search?query={}"
 			},
 			{
 				alias: "gh",
@@ -87,12 +92,17 @@ const defaultConfig = {
 				url: "https://github.com/search?q={}"
 			},
 			{
-				alias: "s",
+				alias: "so",
 				name: "Stack Overflow Search",
 				url: "https://stackoverflow.com/search?q={}"
 			},
 			{
 				alias: "r",
+				name: "Reddit Search",
+				url: "https://www.google.com/search?q=site%3Areddit.com+{}"
+			},
+			{
+				alias: "rr",
 				name: "Subreddit Search",
 				url: "https://reddit.com/r/{}"
 			},
@@ -100,35 +110,119 @@ const defaultConfig = {
 				alias: "w",
 				name: "Wikipedia Search",
 				url: "https://en.wikipedia.org/wiki/{}"
-			}
+			},
+			{
+				alias: "ss",
+				name: "Semantic Scholar Search",
+				url: "https://www.semanticscholar.org/search?q={}&sort=relevance"
+			},
+			{
+				alias: "gs",
+				name: "Google Scholar Search",
+				url: "https://scholar.google.com/scholar?&q={}"
+			},
+			{
+				alias: "yt",
+				name: "Youtube Search",
+				url: "https://www.youtube.com/results?search_query={}"
+			},
+			{
+				alias: "lib",
+				name: "Library Genesis Search",
+				url: "http://libgen.rs/search.php?req={}"
+			},
 		]
 	},
 	sections: {
 		list: [
 			{
 				title: "General",
-				color: "green",
+				color: "red",
 				align: "left",
 				links: [
 					{
-						name: "Portfolio",
-						url: "https://cancellek.com",
+						name: "Website",
+						url: "https://jskherman.com",
 						icon: "mdi:web"
 					},
 					{
-						name: "Keybase",
-						url: "https://keybase.io/",
-						icon: "fa-brands:keybase"
-					},
-					{
-						name: "GPT",
+						name: "ChatGPT",
 						url: "https://chat.openai.com/",
 						icon: "simple-icons:openai"
 					},
 					{
-						name: "OCI",
-						url: "https://www.oracle.com/cloud/",
-						icon: "simple-icons:oracle"
+						name: "BetterGPT",
+						url: "https://bettergpt.chat/",
+						icon: "simple-icons:openai"
+					},
+					{
+						name: "TinyWow",
+						url: "https://tinywow.com/",
+						icon: "tabler:tool",
+					},
+					{
+						name: "Paisa",
+						url: "https://localhost:7500",
+						icon: "simple-icons:cashapp"
+					}
+				]
+			},
+			{
+				title: "Comms",
+				color: "violet",
+				align: "left",
+				links: [
+					{
+						name: "Gmail",
+						url: "https://mail.google.com/",
+						icon: "mdi:gmail"
+					},
+					{
+						name: "Messenger",
+						url: "https://messenger.com",
+						icon: "simple-icons:messenger"
+					},
+					{
+						name: "Telegram",
+						url: "https://web.telegram.org/k/",
+						icon: "simple-icons:telegram"
+					},
+					{
+						name: "Discord",
+						url: "https://discord.com",
+						icon: "mdi:discord"
+					}
+				]
+			},
+			{
+				title: "Social",
+				color: "yellow",
+				align: "left",
+				links: [
+					{
+						name: "Firefish",
+						url: "https://firefish.social/",
+						icon: "simple-icons:firefish"
+					},
+					{
+						name: "Twitter",
+						url: "https://twitter.com",
+						icon: "mdi:twitter"
+					},
+					{
+						name: "Reddit",
+						url: "https://reddit.com",
+						icon: "mdi:reddit"
+					},
+					{
+						name: "Facebook",
+						url: "https://facebook.com",
+						icon: "simple-icons:facebook"
+					},
+					{
+						name: "LinkedIn",
+						url: "https://linkedin.com",
+						icon: "mdi:linkedin"
 					}
 				]
 			},
@@ -143,14 +237,14 @@ const defaultConfig = {
 						icon: "mdi:github"
 					},
 					{
-						name: "GitLab",
-						url: "https://gitlab.com",
-						icon: "ph:gitlab-logo-simple-fill"
+						name: "Cloudflare",
+						url: "https://dash.cloudflare.com/",
+						icon: "simple-icons:cloudflare"
 					},
 					{
-						name: "Dev.to",
-						url: "https://dev.to",
-						icon: "material-symbols:logo-dev"
+						name: "Fly.io",
+						url: "https://fly.io/dashboard",
+						icon: "fa6-brands:fly"
 					},
 					{
 						name: "Stack Overflow",
@@ -160,111 +254,79 @@ const defaultConfig = {
 				]
 			},
 			{
-				title: "Social",
-				color: "violet",
-				align: "left",
-				links: [
-					{
-						name: "Twitter",
-						url: "https://twitter.com",
-						icon: "mdi:twitter"
-					},
-					{
-						name: "Mastodon",
-						url: "https://mastodon.social/",
-						icon: "ri:mastodon-fill"
-					},
-					{
-						name: "Reddit",
-						url: "https://reddit.com",
-						icon: "mdi:reddit"
-					},
-					{
-						name: "Polywork",
-						url: "https://polywork.com",
-						icon: "simple-icons:polywork"
-					}
-				]
-			},
-			{
-				title: "Gaming",
-				color: "cyan",
-				align: "left",
-				links: [
-					{
-						name: "Polygon",
-						url: "https://polygon.com",
-						icon: "uil:polygon"
-					},
-					{
-						name: "IGN",
-						url: "https://ign.com",
-						icon: "mdi:currency-sign"
-					},
-					{
-						name: "RPS",
-						url: "https://rockpapershotgun.com/",
-						icon: "ph:toilet-paper-bold"
-					},
-					{
-						name: "80lv",
-						url: "https://80.lv/",
-						icon: "tabler:hand-rock"
-					}
-				]
-			},
-			{
-				title: "Science",
+				title: "Utils",
 				color: "blue",
 				align: "left",
 				links: [
 					{
-						name: "PopSci",
-						url: "https://popsci.com/",
-						icon: "material-symbols:science"
+						name: "Calendar",
+						url: "https://calendar.cron.com/",
+						icon: "simple-icons:googlecalendar"
 					},
 					{
-						name: "Space",
-						url: "fa6-solid:user-astronaut",
-						icon: "mdi:reddit"
+						name: "Todoist",
+						url: "https://todoist.com/app/",
+						icon: "simple-icons:todoist"
 					},
 					{
-						name: "NASA",
-						url: "https://blogs.nasa.gov/",
-						icon: "simple-icons:nasa"
+						name: "GoblinTools",
+						url: "https://goblin.tools/",
+						icon: "mdi:sword"
 					},
 					{
-						name: "ESA",
-						url: "https://blogs.esa.int/",
-						icon: "mdi:black-mesa"
+						name: "Tracker",
+						url: "https://docs.google.com/spreadsheets/d/1g_tdpx8HMnyQvazqzlpqYjWog24osJ-B72z-92iKL_w/edit",
+						icon: "mdi:google-spreadsheet"
 					}
 				]
 			},
 			{
-				title: "Tech",
-				color: "yellow",
+				title: "Study",
+				color: "green",
 				align: "left",
 				links: [
 					{
-						name: "TechCrunch",
-						url: "https://techcrunch.com/",
-						icon: "game-icons:techno-heart"
+						name: "Anki",
+						url: "https://ankiweb.net/",
+						icon: "fluent-mdl2:stack"
 					},
 					{
-						name: "Verge",
-						url: "https://www.theverge.com/",
-						icon: "arcticons:verge"
+						name: "Saved Lectures",
+						url: "https://1drv.ms/f/s!Aq-Pwiif__0Fj-9oLiU1DbH2YepzVA?e=s3x7al",
+						icon: "ph:video-bold"
+					},
+					{
+						name: "BXR Tracker",
+						url: "https://docs.google.com/spreadsheets/d/1xdm6-FX9sqeqHLrtg30zDPaIB6dtBXpnY95_CRijFS0/edit",
+						icon: "teenyicons:book-solid"
+					}
+				]
+			},
+			{
+				title: "Interesting",
+				color: "cyan",
+				align: "left",
+				links: [
+					{
+						name: "Hacker News",
+						url: "https://news.ycombinator.com/",
+						icon: "fa:hacker-news"
+					},
+					{
+						name: "Raindrop",
+						url: "https://app.raindrop.io/",
+						icon: "mdi:bookmark"
+					},
+					{
+						name: "ADHD Wiki",
+						url: "https://romankogan.net/adhd/",
+						icon: "mdi:brain"
 					},
 					{
 						name: "It's Foss",
 						url: "https://itsfoss.com/",
 						icon: "ri:mastodon-fill"
 					},
-					{
-						name: "9To5 Linux",
-						url: "https://9to5linux.com/",
-						icon: "uil:linux"
-					}
 				]
 			}
 		]
